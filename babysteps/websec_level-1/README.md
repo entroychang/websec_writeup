@@ -17,4 +17,4 @@ Level 1
 ```
 1 union select 1,password from users where id=1
 ```
-6. There is the flag : WEBSEC{Simple_SQLite_Injection}
+6. Here is the flag : WEBSEC{Simple_SQLite_Injection}
