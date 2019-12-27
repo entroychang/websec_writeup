@@ -10,11 +10,11 @@ params = {
 
 r = get(url , params=params)
 pos = r.text.find('WEBSEC{')
-    while (True):
-        txt = r.text[pos]
-        print(txt , end='')
-        if (txt == '}'):
-            print()
-            break
+while (True):
+    txt = r.text[pos]
+    print(txt , end='')
+    if (txt == '}'):
+        print()
+        break
 
-        pos += 1
+    pos += 1
