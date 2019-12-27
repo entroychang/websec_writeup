@@ -9,4 +9,12 @@ params = {
 }
 
 r = get(url , params=params)
-print r.text
+pos = r.text.find('WEBSEC{')
+    while (True):
+        txt = r.text[pos]
+        print(txt , end='')
+        if (txt == '}'):
+            print()
+            break
+
+        pos += 1
