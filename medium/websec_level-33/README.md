@@ -32,6 +32,7 @@
 * 下面的討論中，有一個討論看起來是關鍵
     * if the serialized string contains a reference to a class that cannot be instantiated (e.g. being abstract) PHP will immediately die with a fatal error.
     * 簡單來說，如果反序列化的對象是抽象類(abstract)，會發生 fatal error
+    * [stackoverflow](https://stackoverflow.com/questions/53318626/serialized-string-contains-a-reference-to-a-class-that-cannot-be-instantiated)
 * 那目標就很清楚了，要找一個 object 是預設的，而且是抽象類
 
 ### [interface](https://codertw.com/程式語言/109476/)
